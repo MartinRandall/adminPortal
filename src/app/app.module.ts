@@ -5,10 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SampleContentComponent } from './sample-content/sample-content.component';
+import { ShellComponent } from './shell/shell.component';
+import {Sample2Component} from "./sample-content/sample2-component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SampleContentComponent,
+    Sample2Component,
+    ShellComponent
   ],
   imports: [
     BrowserModule,
