@@ -9,6 +9,7 @@ import {SampleContentComponent} from './sample-content/sample-content.component'
 import {ShellComponent} from './shell/shell.component';
 import {Sample2Component} from "./sample-content/sample2-component";
 import {PanelComponent} from "./widgets/panel-component";
+import {ICheckDirective} from "./widgets/icheck-directive";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {PanelComponent} from "./widgets/panel-component";
     SampleContentComponent,
     Sample2Component,
     ShellComponent,
-    PanelComponent
+    PanelComponent,
+    ICheckDirective
   ],
   imports: [
     BrowserModule,

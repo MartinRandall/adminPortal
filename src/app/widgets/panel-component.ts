@@ -1,30 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 @Component({
   selector: 'panel',
-  templateUrl: './panel-component.html'
+  templateUrl: './panel-component.html',
+  styleUrls: ['./panel-component.scss']
 })
 export class PanelComponent {
 
-  togglePanelOpen() {
-    console.log('togglePanelOpen');
+  @Input() showCloseButton: boolean;
+  @Input() showMenu: boolean;
+  @Input() showCollapseButton: boolean = true;
 
-    /*
-    var $BOX_PANEL = $(this).closest('.x_panel'),
-      $ICON = $(this).find('i'),
-      $BOX_CONTENT = $BOX_PANEL.find('.x_content');
+  togglePanelOpen(event) {
+    const $link  = $(event.currentTarget);
+
+    const $boxPanel = $link.closest('.x_panel'),
+      $icon = $link.find('i'),
+      $boxContent = $boxPanel.find('.x_content');
 
     // fix for some div with hardcoded fix class
-    if ($BOX_PANEL.attr('style')) {
-      $BOX_CONTENT.slideToggle(200, function(){
-        $BOX_PANEL.removeAttr('style');
+    if ($boxPanel.attr('style')) {
+      $boxContent.slideToggle(200, function(){
+        $boxPanel.removeAttr('style');
       });
     } else {
-      $BOX_CONTENT.slideToggle(200);
-      $BOX_PANEL.css('height', 'auto');
+      $boxContent.slideToggle(200);
+      $boxPanel.css('height', 'auto');
     }
 
-    $ICON.toggleClass('fa-chevron-up fa-chevron-down');
-    */
+    $icon.toggleClass('fa-chevron-up fa-chevron-down');
   }
 
 }
